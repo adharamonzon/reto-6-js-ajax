@@ -32,10 +32,10 @@ function displayMatches () {
   const matchArray = findMatches(this.value, cities);
   const html = matchArray.map((place) => {
     const regex = new RegExp(this.value, 'gi');
-    const cityName = place.city.replace(regex, `<mark class="hl">${this.value}</mark>`)
-    const stateName = place.state.replace(regex, `<mark class="hl">${this.value}</mark>`)
+    const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
+    const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
     return `
-    <li>
+    <li class='list-item'>
     <p class='name'>${cityName}, ${stateName}</p>
     <p class='population'>${numberWithCommas(place.population)}</p>
     </li>
